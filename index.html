@@ -79,6 +79,7 @@
     .puff:nth-child(3) { left: 48%; width: 160px; height: 160px; animation-duration: 18s; animation-delay: 2s; }
     .puff:nth-child(4) { left: 70%; animation-duration: 20s; animation-delay: 7s; }
     .puff:nth-child(5) { left: 86%; width: 170px; height: 170px; animation-duration: 24s; animation-delay: 10s; }
+
     @keyframes floatSmoke {
       0% { transform: translateY(0) translateX(0) scale(0.7); opacity: 0; }
       15% { opacity: 0.6; }
@@ -100,6 +101,7 @@
     .flower:nth-child(7) { left: 74%; top: 16%; animation-delay: 4s; }
     .flower:nth-child(8) { left: 85%; top: 72%; animation-delay: 2.5s; }
     .flower:nth-child(9) { left: 92%; top: 32%; animation-delay: 7s; }
+
     @keyframes floatFlower {
       0%, 100% { transform: translateY(0px) rotate(0deg) scale(0.92); }
       50% { transform: translateY(-12px) rotate(8deg) scale(1.05); }
@@ -117,10 +119,12 @@
       position: fixed; left: -220px; bottom: 54px; z-index: 40; display: flex; align-items: end; gap: 8px; pointer-events: none; transition: transform 0.12s linear;
       filter: drop-shadow(0 10px 20px rgba(0,0,0,0.26));
     }
+
     .scroll-engine, .scroll-coach, .engine, .coach {
       background: linear-gradient(180deg, #d93b72, #7f1636);
       border: 2px solid rgba(255,255,255,0.2); position: relative; box-shadow: 0 8px 20px rgba(0,0,0,0.24);
     }
+
     .scroll-engine { width: 96px; height: 66px; border-radius: 20px 24px 16px 16px; }
     .scroll-engine::before, .engine::before {
       content: ""; position: absolute; width: 28px; height: 38px; border-radius: 10px 10px 0 0;
@@ -140,54 +144,67 @@
     .coach-wheel { left: 12px; width: 18px; height: 18px; bottom: -11px; box-shadow: 46px 0 0 #fff0f7; }
 
     .gate-screen {
-      position: fixed; inset: 0; z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 18px;
+      position: fixed; inset: 0; z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 10px;
       background: radial-gradient(circle at top, rgba(255,179,200,0.14), transparent 26%), linear-gradient(180deg, rgba(10,0,2,0.92), rgba(42,8,17,0.96));
       transition: opacity 0.45s ease, visibility 0.45s ease;
     }
     .gate-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
     .gate-poster {
-      width: min(760px, 100%); position: relative; background: linear-gradient(180deg, rgba(86,15,36,0.96), rgba(43,7,17,0.98));
-      border: 1px solid rgba(255,255,255,0.16); border-radius: 36px; padding: 34px 20px 24px; box-shadow: 0 30px 70px rgba(0,0,0,0.4); overflow: hidden;
+      width: min(520px, calc(100% - 16px));
+      position: relative;
+      background: linear-gradient(180deg, rgba(86,15,36,0.96), rgba(43,7,17,0.98));
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 28px;
+      padding: 18px 10px 14px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+      overflow: hidden;
     }
+
     .gate-poster::before {
-      content: ""; position: absolute; inset: 12px; border-radius: 28px; border: 1px solid rgba(255,215,168,0.22); pointer-events: none;
+      content: ""; position: absolute; inset: 8px; border-radius: 18px; border: 1px solid rgba(255,215,168,0.22); pointer-events: none;
     }
-    .ribbon-top, .ribbon-bottom { position: absolute; left: 0; width: 100%; height: 96px; pointer-events: none; }
+
+    .ribbon-top, .ribbon-bottom { position: absolute; left: 0; width: 100%; height: 54px; pointer-events: none; }
     .ribbon-top { top: 0; }
     .ribbon-bottom { bottom: 0; transform: scaleY(-1); opacity: 0.86; }
+
     .ribbon-strip {
-      position: absolute; left: 0; right: 0; top: 34px; margin: auto; width: 100%; height: 22px; background: linear-gradient(90deg, #f2a0b9, #ffd7a8, #f2a0b9); box-shadow: 0 0 20px rgba(255,215,168,0.18);
+      position: absolute; left: 0; right: 0; top: 18px; margin: auto; width: 100%; height: 12px; background: linear-gradient(90deg, #f2a0b9, #ffd7a8, #f2a0b9); box-shadow: 0 0 20px rgba(255,215,168,0.18);
     }
-    .bow { position: absolute; top: 10px; width: 110px; height: 70px; }
-    .bow.left { left: 18px; }
-    .bow.right { right: 18px; transform: scaleX(-1); }
+
+    .bow { position: absolute; top: 2px; width: 62px; height: 40px; }
+    .bow.left { left: 8px; }
+    .bow.right { right: 8px; transform: scaleX(-1); }
     .bow::before, .bow::after {
-      content: ""; position: absolute; top: 6px; width: 52px; height: 42px; background: linear-gradient(135deg, #ffd7a8, #f2a0b9); border-radius: 60% 40% 60% 40%; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24);
+      content: ""; position: absolute; top: 4px; width: 28px; height: 24px; background: linear-gradient(135deg, #ffd7a8, #f2a0b9); border-radius: 60% 40% 60% 40%; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24);
     }
-    .bow::before { left: 6px; transform: rotate(-16deg); }
-    .bow::after { right: 6px; transform: rotate(16deg); }
-    .bow-center { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); width: 24px; height: 24px; border-radius: 50%; background: #ffe8bf; box-shadow: 0 0 0 6px rgba(255,215,168,0.18); }
-    .gate-inner { position: relative; z-index: 2; text-align: center; padding: 62px 10px 58px; }
+    .bow::before { left: 4px; transform: rotate(-16deg); }
+    .bow::after { right: 4px; transform: rotate(16deg); }
+    .bow-center { position: absolute; left: 50%; top: 12px; transform: translateX(-50%); width: 16px; height: 16px; border-radius: 50%; background: #ffe8bf; box-shadow: 0 0 0 4px rgba(255,215,168,0.18); }
+
+    .gate-inner { position: relative; z-index: 2; text-align: center; padding: 38px 4px 28px; }
     .gate-tag {
-      display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(255,179,200,0.14); color: var(--rose-soft); border: 1px solid rgba(255,255,255,0.14); letter-spacing: 1.4px; text-transform: uppercase; font-size: 0.72rem; margin-bottom: 16px;
+      display: inline-block; padding: 8px 12px; border-radius: 999px; background: rgba(255,179,200,0.14); color: var(--rose-soft); border: 1px solid rgba(255,255,255,0.14); letter-spacing: 1.2px; text-transform: uppercase; font-size: 0.66rem; margin-bottom: 14px;
     }
     .gate-inner h1 {
-      font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 7vw, 4.6rem); line-height: 1.04; margin-bottom: 12px; color: #fff2f6; text-shadow: 0 10px 26px rgba(0,0,0,0.26);
+      font-family: 'Playfair Display', serif; font-size: clamp(1.55rem, 7.2vw, 2.35rem); line-height: 1.08; margin-bottom: 12px; color: #fff2f6; text-shadow: 0 10px 26px rgba(0,0,0,0.26);
     }
-    .gate-inner p { max-width: 560px; margin: 0 auto 22px; color: rgba(255,246,248,0.82); line-height: 1.85; }
+    .gate-inner p { max-width: 420px; margin: 0 auto 12px; color: rgba(255,246,248,0.82); line-height: 1.7; font-size: 0.88rem; }
+
     .pin-wrap {
-      width: min(420px, 100%); margin: 0 auto; padding: 18px; border-radius: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(12px);
+      width: 100%; max-width: 340px; margin: 0 auto; padding: 10px; border-radius: 18px; background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(12px);
     }
     .pin-display {
-      width: 100%; padding: 16px 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.14); background: rgba(0,0,0,0.18); color: white; text-align: center; font-size: 1.35rem; letter-spacing: 10px; margin-bottom: 12px; outline: none;
+      width: 100%; padding: 12px 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.14); background: rgba(0,0,0,0.18); color: white; text-align: center; font-size: 1rem; letter-spacing: 6px; margin-bottom: 12px; outline: none;
     }
-    .pin-pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .pin-btn, .pin-enter, .pin-clear { border: 0; border-radius: 18px; padding: 14px; font-family: inherit; font-weight: 600; cursor: pointer; transition: 0.22s ease; }
+    .pin-pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .pin-btn, .pin-enter, .pin-clear { border: 0; border-radius: 16px; padding: 10px; font-family: inherit; font-weight: 600; cursor: pointer; transition: 0.22s ease; font-size: 0.95rem; }
     .pin-btn, .pin-clear { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.12); }
     .pin-enter { grid-column: span 2; background: linear-gradient(135deg, #f2a0b9, #ffd7a8); color: #5d1028; box-shadow: 0 10px 24px rgba(255,215,168,0.16); }
     .pin-btn:hover, .pin-enter:hover, .pin-clear:hover { transform: translateY(-2px) scale(1.02); }
-    .pin-hint { margin-top: 12px; font-size: 0.88rem; color: rgba(255,246,248,0.68); }
-    .pin-error { min-height: 22px; margin-top: 10px; color: #ffb3c8; font-size: 0.9rem; }
+    .pin-hint { margin-top: 10px; font-size: 0.82rem; color: rgba(255,246,248,0.68); }
+    .pin-error { min-height: 20px; margin-top: 8px; color: #ffb3c8; font-size: 0.88rem; }
 
     .hero { min-height: 100vh; display: grid; place-items: center; padding: 28px 18px 50px; position: relative; overflow: hidden; }
     .hero::before { content: ""; position: absolute; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(255,122,166,0.18), transparent 70%); top: -250px; right: -180px; filter: blur(8px); }
@@ -269,8 +286,8 @@
     .signature { margin-top: 20px; font-family: 'Playfair Display', serif; font-size: 1.8rem; text-align: right; color: var(--berry); }
 
     .video-card { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; align-items: center; padding: 18px; }
-    .video-box { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); background: #000; }
-    .video-box iframe { width: 100%; height: 100%; border: 0; }
+    .video-box { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); background: #000; display:flex; align-items:center; justify-content:center; padding:18px; }
+    .audio-player { width: 100%; max-width: 100%; }
 
     .flower-pocket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
     .flower-pocket-visual { min-height: 460px; position: relative; display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, rgba(255,179,200,0.12), transparent 42%); }
@@ -298,7 +315,9 @@
     .big-flower span:nth-child(6) { transform: rotate(225deg) translateY(-20px); }
     .big-flower span:nth-child(7) { transform: rotate(270deg) translateY(-20px); }
     .big-flower span:nth-child(8) { transform: rotate(315deg) translateY(-20px); }
+
     @keyframes bloomFloat { 0%,100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-10px) scale(1.04); } }
+
     .flower-pocket-card h3 { font-size: 2.2rem; margin-bottom: 10px; }
     .flower-pocket-card p { color: rgba(255,246,248,0.86); line-height: 1.9; margin-bottom: 12px; }
     .flower-messages { display: grid; gap: 10px; margin-top: 16px; }
@@ -309,6 +328,7 @@
     .stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: #ffd0dd; margin-bottom: 6px; }
     .stat span { color: rgba(255,246,248,0.82); font-size: 0.92rem; }
     .love-counter-grid .stat { min-height: 132px; display: flex; flex-direction: column; justify-content: center; }
+
     .interactive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .interactive-pop { transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .interactive-pop:hover, .interactive-pop:active { transform: translateY(-4px) scale(1.02); }
@@ -331,9 +351,16 @@
     .final-section { padding-bottom: 60px; }
     .final-card { padding: 32px 22px; text-align: center; position: relative; overflow: hidden; }
     .final-card h2 { font-size: clamp(2.3rem, 6vw, 4rem); margin-bottom: 12px; }
+
     .floating-hearts { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 999; }
     .heart { position: absolute; bottom: -40px; color: rgba(255,179,200,0.95); font-size: 18px; animation: floatHeart linear forwards; text-shadow: 0 0 16px rgba(255,179,200,0.26); }
-    @keyframes floatHeart { from { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; } 12% { opacity: 1; } to { transform: translateY(-110vh) translateX(var(--x-shift)) scale(1.4) rotate(18deg); opacity: 0; } }
+
+    @keyframes floatHeart {
+      from { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+      12% { opacity: 1; }
+      to { transform: translateY(-110vh) translateX(var(--x-shift)) scale(1.4) rotate(18deg); opacity: 0; }
+    }
+
     .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
 
@@ -345,6 +372,7 @@
     .lightbox-text { padding: 18px; }
     .lightbox-text h3 { margin-bottom: 8px; font-size: 1.3rem; }
     .lightbox-text p { line-height: 1.8; opacity: 0.8; }
+
     footer { text-align: center; padding: 0 18px 34px; color: rgba(255,246,248,0.58); font-size: 0.9rem; }
 
     @media (max-width: 980px) {
@@ -356,6 +384,7 @@
       .scrapbook-mini { grid-template-columns: repeat(3, 1fr); }
       .pocket-wrap { margin: 0 auto; }
     }
+
     @media (max-width: 760px) {
       .hero-card { padding: 26px 16px 20px; border-radius: 26px; }
       .ticket-main, .ticket-side, .letter, .final-card, .flower-pocket-card { padding-left: 16px; padding-right: 16px; }
@@ -386,8 +415,8 @@
       .big-flower { width: 72px; height: 72px; }
       .big-flower span { width: 22px; height: 40px; }
       .f1 { left: 8px; top: 78px; } .f2 { left: 46px; top: 34px; } .f3 { left: 86px; top: 4px; } .f4 { left: 126px; top: 34px; } .f5 { left: 166px; top: 78px; }
-      .gate-inner { padding-top: 52px; padding-bottom: 50px; }
     }
+
     @media (max-width: 520px) {
       section { width: min(100% - 14px, 1120px); }
       .hero { padding: 18px 10px 38px; }
@@ -420,10 +449,6 @@
       .big-flower { width: 62px; height: 62px; }
       .big-flower span { width: 18px; height: 34px; }
       .f1 { left: 2px; top: 70px; } .f2 { left: 34px; top: 32px; } .f3 { left: 72px; top: 4px; } .f4 { left: 110px; top: 32px; } .f5 { left: 146px; top: 70px; }
-      .gate-poster { border-radius: 28px; padding-left: 14px; padding-right: 14px; }
-      .bow { width: 82px; height: 56px; }
-      .bow::before, .bow::after { width: 40px; height: 32px; }
-      .pin-display { letter-spacing: 8px; font-size: 1.15rem; }
     }
   </style>
 </head>
@@ -443,7 +468,7 @@
       <div class="gate-inner">
         <div class="gate-tag">Private Memory Entrance</div>
         <h1>Are you ready to enter our life memories?</h1>
-        <p>A wrapped little world of love, moments, music, and the sweetest memories is waiting behind this code. <br>CODE IS 511</br></p>
+        <p>A wrapped little world of love, moments, music, and the sweetest memories is waiting behind this code.</p>
         <div class="pin-wrap">
           <input class="pin-display" id="pinDisplay" type="password" inputmode="numeric" maxlength="3" placeholder="•••" readonly>
           <div class="pin-pad">
@@ -466,6 +491,7 @@
       </div>
     </div>
   </div>
+
   <div class="smoke">
     <div class="puff"></div>
     <div class="puff"></div>
@@ -473,14 +499,18 @@
     <div class="puff"></div>
     <div class="puff"></div>
   </div>
+
   <div class="rail-line"></div>
+
   <div class="scroll-train" id="scrollTrain" aria-hidden="true">
     <div class="scroll-engine"><div class="scroll-wheel"></div></div>
     <div class="scroll-coach"><div class="scroll-coach-wheel"></div></div>
     <div class="scroll-coach"><div class="scroll-coach-wheel"></div></div>
     <div class="scroll-coach"><div class="scroll-coach-wheel"></div></div>
   </div>
+
   <div class="floating-hearts" id="floatingHearts"></div>
+
   <div class="mini-flowers" aria-hidden="true">
     <div class="flower">🌸</div>
     <div class="flower">🌷</div>
@@ -492,8 +522,6 @@
     <div class="flower">🌷</div>
     <div class="flower">🌼</div>
   </div>
-
-  
 
   <header class="hero">
     <div class="hero-card reveal show">
@@ -813,21 +841,24 @@
 
   <section class="reveal">
     <div class="section-title">
-      <span>Song + Video</span>
+      <span>Our Song</span>
       <h2>The Soundtrack of the Journey</h2>
       <p>
-        A special soundtrack and video section that brings the whole journey to life with even more feeling and warmth.
+        A soft little song that carries the feeling of the whole story.
       </p>
     </div>
 
     <div class="video-card">
       <div class="video-box">
-        <iframe src="Mitski - My Love Mine All Mine.mp4" title="Memory video" allowfullscreen></iframe>
+        <audio controls preload="none" class="audio-player">
+          <source src="Mitski - My Love Mine All Mine.mp4" type="audio/mp4">
+          Your browser does not support the audio element.
+        </audio>
       </div>
       <div class="video-text">
-        <h3>One song can bring back everything</h3>
+        <h3>Mitski — My Love Mine All Mine</h3>
         <p>
-          Add the song that feels like your story. It could be the one you both love, the one that reminds you of a specific memory, or a soft background track that makes the whole page feel even more emotional.
+          A soft song to play while moving through the memories, the photos, and all the little moments kept in this page.
         </p>
         <a href="#final" class="btn btn-primary">Go to the final station</a>
       </div>
@@ -967,10 +998,6 @@
     </div>
   </div>
 
-  <audio id="bgMusic" loop>
-    <source src="" type="audio/mpeg">
-  </audio>
-
   <script>
     const reveals = document.querySelectorAll('.reveal');
     const heartsContainer = document.getElementById('floatingHearts');
@@ -986,6 +1013,13 @@
     const loveHours = document.getElementById('loveHours');
     const loveMinutes = document.getElementById('loveMinutes');
     const loveSeconds = document.getElementById('loveSeconds');
+
+    const gateScreen = document.getElementById('gateScreen');
+    const pinDisplay = document.getElementById('pinDisplay');
+    const pinButtons = document.querySelectorAll('[data-pin]');
+    const pinClear = document.getElementById('pinClear');
+    const pinEnter = document.getElementById('pinEnter');
+    const pinError = document.getElementById('pinError');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1130,12 +1164,7 @@
     }
 
     setTimeout(() => createHeartBurst(16), 1200);
-  const gateScreen = document.getElementById('gateScreen');
-    const pinDisplay = document.getElementById('pinDisplay');
-    const pinButtons = document.querySelectorAll('[data-pin]');
-    const pinClear = document.getElementById('pinClear');
-    const pinEnter = document.getElementById('pinEnter');
-    const pinError = document.getElementById('pinError');
+
     let currentPin = '';
     const secretPin = '511';
 
@@ -1164,8 +1193,8 @@
     function unlockGate() {
       if (currentPin === secretPin) {
         if (gateScreen) gateScreen.classList.add('hidden');
-        createBurst(26);
-        setTimeout(() => createBurst(18), 260);
+        createHeartBurst(26);
+        setTimeout(() => createHeartBurst(18), 260);
       } else {
         if (pinError) pinError.textContent = 'That code is not right. Try again, love.';
         currentPin = '';
@@ -1179,6 +1208,7 @@
 
     document.addEventListener('keydown', (e) => {
       if (!gateScreen || gateScreen.classList.contains('hidden')) return;
+
       if (/^[0-9]$/.test(e.key) && currentPin.length < 3) {
         currentPin += e.key;
         updatePinDisplay();
@@ -1190,6 +1220,6 @@
         unlockGate();
       }
     });
-</script>
+  </script>
 </body>
 </html>
