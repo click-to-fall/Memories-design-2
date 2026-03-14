@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layla & Ahmed | Train of Memories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #160307;
+      --bg2: #2a0811;
+      --bg3: #3d0b17;
+      --bg4: #541122;
+      --rose: #ffb3c8;
+      --rose-soft: #ffe6ee;
+      --rose-mid: #ff7aa6;
+      --rose-deep: #d93b72;
+      --red-soft: #ffccd7;
+      --red-mid: #c12b54;
+      --red-dark: #7f1636;
+      --wine: #4a0c1f;
+      --berry: #6d1730;
+      --plum: #2d0611;
+      --cream: #fff6f8;
+      --paper: rgba(255, 246, 248, 0.97);
+      --ink: #4d1527;
+      --glass: rgba(255,255,255,0.1);
+      --line: rgba(255,255,255,0.16);
+      --shadow: 0 22px 48px rgba(7, 0, 2, 0.42);
+      --gold: #ffd7a8;
+      --leaf: #7ba06f;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--cream);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(255,179,200,0.12), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(255,215,168,0.08), transparent 16%),
+        radial-gradient(circle at 50% 110%, rgba(217,59,114,0.16), transparent 34%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 32%, var(--bg3) 68%, var(--bg4) 100%);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08) 0 2px, transparent 3px),
+        radial-gradient(circle at 75% 35%, rgba(255,255,255,0.07) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 55% 80%, rgba(255,255,255,0.07) 0 2px, transparent 3px),
+        radial-gradient(circle at 88% 18%, rgba(255,255,255,0.08) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 30% 70%, rgba(255,255,255,0.06) 0 1.8px, transparent 2.8px);
+      background-size: 280px 280px;
+      animation: twinkle 10s linear infinite;
+      pointer-events: none;
+      opacity: 0.85;
+      z-index: -3;
+    }
+
+    @keyframes twinkle { from { transform: translateY(0); } to { transform: translateY(-280px); } }
+
+    .smoke { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: -2; }
+    .puff {
+      position: absolute; bottom: -120px; width: 140px; height: 140px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,218,228,0.18), rgba(255,255,255,0.02) 70%, transparent 75%);
+      filter: blur(6px); animation: floatSmoke linear infinite; opacity: 0.78;
+    }
+    .puff:nth-child(1) { left: 8%; animation-duration: 16s; animation-delay: 0s; }
+    .puff:nth-child(2) { left: 25%; width: 180px; height: 180px; animation-duration: 22s; animation-delay: 4s; }
+    .puff:nth-child(3) { left: 48%; width: 160px; height: 160px; animation-duration: 18s; animation-delay: 2s; }
+    .puff:nth-child(4) { left: 70%; animation-duration: 20s; animation-delay: 7s; }
+    .puff:nth-child(5) { left: 86%; width: 170px; height: 170px; animation-duration: 24s; animation-delay: 10s; }
+    @keyframes floatSmoke {
+      0% { transform: translateY(0) translateX(0) scale(0.7); opacity: 0; }
+      15% { opacity: 0.6; }
+      70% { opacity: 0.26; }
+      100% { transform: translateY(-120vh) translateX(60px) scale(1.45); opacity: 0; }
+    }
+
+    .mini-flowers { position: fixed; inset: 0; pointer-events: none; z-index: 3; overflow: hidden; }
+    .flower {
+      position: absolute; font-size: 20px; opacity: 0.4; animation: floatFlower 18s linear infinite;
+      filter: drop-shadow(0 0 10px rgba(255,122,166,0.2));
+    }
+    .flower:nth-child(1) { left: 4%; top: 12%; animation-delay: 0s; }
+    .flower:nth-child(2) { left: 14%; top: 75%; animation-delay: 2s; }
+    .flower:nth-child(3) { left: 28%; top: 20%; animation-delay: 5s; }
+    .flower:nth-child(4) { left: 38%; top: 82%; animation-delay: 1s; }
+    .flower:nth-child(5) { left: 50%; top: 10%; animation-delay: 3s; }
+    .flower:nth-child(6) { left: 61%; top: 65%; animation-delay: 6s; }
+    .flower:nth-child(7) { left: 74%; top: 16%; animation-delay: 4s; }
+    .flower:nth-child(8) { left: 85%; top: 72%; animation-delay: 2.5s; }
+    .flower:nth-child(9) { left: 92%; top: 32%; animation-delay: 7s; }
+    @keyframes floatFlower {
+      0%, 100% { transform: translateY(0px) rotate(0deg) scale(0.92); }
+      50% { transform: translateY(-12px) rotate(8deg) scale(1.05); }
+    }
+
+    .rail-line {
+      position: fixed; left: 50%; bottom: 0; transform: translateX(-50%); width: min(1100px, 100vw); height: 140px; z-index: -1; opacity: 0.18; pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent 0 6%, rgba(255,179,200,0.46) 6% 7%, transparent 7% 93%, rgba(255,179,200,0.46) 93% 94%, transparent 94%),
+        repeating-linear-gradient(90deg, transparent 0 28px, rgba(255,255,255,0.28) 28px 44px, transparent 44px 72px),
+        linear-gradient(180deg, transparent 0 48%, rgba(255,230,238,0.34) 48% 52%, transparent 52%);
+    }
+
+    .scroll-train {
+      position: fixed; left: -220px; bottom: 54px; z-index: 40; display: flex; align-items: end; gap: 8px; pointer-events: none; transition: transform 0.12s linear;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.26));
+    }
+    .scroll-engine, .scroll-coach, .engine, .coach {
+      background: linear-gradient(180deg, #d93b72, #7f1636);
+      border: 2px solid rgba(255,255,255,0.2); position: relative; box-shadow: 0 8px 20px rgba(0,0,0,0.24);
+    }
+    .scroll-engine { width: 96px; height: 66px; border-radius: 20px 24px 16px 16px; }
+    .scroll-engine::before, .engine::before {
+      content: ""; position: absolute; width: 28px; height: 38px; border-radius: 10px 10px 0 0;
+      background: linear-gradient(180deg, #a51e48, #5e0f28); left: 12px; top: -28px; border: 2px solid rgba(255,255,255,0.18);
+    }
+    .scroll-engine::after, .scroll-coach::after, .engine::after, .coach::after {
+      content: ""; position: absolute; left: 12px; right: 12px; top: 12px; height: 14px;
+      background: repeating-linear-gradient(90deg, rgba(255,243,248,0.95) 0 16px, transparent 16px 24px); border-radius: 8px;
+    }
+    .scroll-coach { width: 74px; height: 48px; border-radius: 16px; }
+    .scroll-wheel, .scroll-coach-wheel, .wheel, .coach-wheel {
+      position: absolute; width: 16px; height: 16px; border-radius: 50%; background: #fff0f7; bottom: -10px;
+    }
+    .scroll-wheel { left: 14px; box-shadow: 38px 0 0 #fff0f7; }
+    .scroll-coach-wheel { left: 10px; box-shadow: 34px 0 0 #fff0f7; }
+    .wheel { left: 16px; width: 18px; height: 18px; bottom: -11px; box-shadow: 46px 0 0 #fff0f7; }
+    .coach-wheel { left: 12px; width: 18px; height: 18px; bottom: -11px; box-shadow: 46px 0 0 #fff0f7; }
+
+    .gate-screen {
+      position: fixed; inset: 0; z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 18px;
+      background: radial-gradient(circle at top, rgba(255,179,200,0.14), transparent 26%), linear-gradient(180deg, rgba(10,0,2,0.92), rgba(42,8,17,0.96));
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+    }
+    .gate-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .gate-poster {
+      width: min(760px, 100%); position: relative; background: linear-gradient(180deg, rgba(86,15,36,0.96), rgba(43,7,17,0.98));
+      border: 1px solid rgba(255,255,255,0.16); border-radius: 36px; padding: 34px 20px 24px; box-shadow: 0 30px 70px rgba(0,0,0,0.4); overflow: hidden;
+    }
+    .gate-poster::before {
+      content: ""; position: absolute; inset: 12px; border-radius: 28px; border: 1px solid rgba(255,215,168,0.22); pointer-events: none;
+    }
+    .ribbon-top, .ribbon-bottom { position: absolute; left: 0; width: 100%; height: 96px; pointer-events: none; }
+    .ribbon-top { top: 0; }
+    .ribbon-bottom { bottom: 0; transform: scaleY(-1); opacity: 0.86; }
+    .ribbon-strip {
+      position: absolute; left: 0; right: 0; top: 34px; margin: auto; width: 100%; height: 22px; background: linear-gradient(90deg, #f2a0b9, #ffd7a8, #f2a0b9); box-shadow: 0 0 20px rgba(255,215,168,0.18);
+    }
+    .bow { position: absolute; top: 10px; width: 110px; height: 70px; }
+    .bow.left { left: 18px; }
+    .bow.right { right: 18px; transform: scaleX(-1); }
+    .bow::before, .bow::after {
+      content: ""; position: absolute; top: 6px; width: 52px; height: 42px; background: linear-gradient(135deg, #ffd7a8, #f2a0b9); border-radius: 60% 40% 60% 40%; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24);
+    }
+    .bow::before { left: 6px; transform: rotate(-16deg); }
+    .bow::after { right: 6px; transform: rotate(16deg); }
+    .bow-center { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); width: 24px; height: 24px; border-radius: 50%; background: #ffe8bf; box-shadow: 0 0 0 6px rgba(255,215,168,0.18); }
+    .gate-inner { position: relative; z-index: 2; text-align: center; padding: 62px 10px 58px; }
+    .gate-tag {
+      display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(255,179,200,0.14); color: var(--rose-soft); border: 1px solid rgba(255,255,255,0.14); letter-spacing: 1.4px; text-transform: uppercase; font-size: 0.72rem; margin-bottom: 16px;
+    }
+    .gate-inner h1 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 7vw, 4.6rem); line-height: 1.04; margin-bottom: 12px; color: #fff2f6; text-shadow: 0 10px 26px rgba(0,0,0,0.26);
+    }
+    .gate-inner p { max-width: 560px; margin: 0 auto 22px; color: rgba(255,246,248,0.82); line-height: 1.85; }
+    .pin-wrap {
+      width: min(420px, 100%); margin: 0 auto; padding: 18px; border-radius: 28px; background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(12px);
+    }
+    .pin-display {
+      width: 100%; padding: 16px 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.14); background: rgba(0,0,0,0.18); color: white; text-align: center; font-size: 1.35rem; letter-spacing: 10px; margin-bottom: 12px; outline: none;
+    }
+    .pin-pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .pin-btn, .pin-enter, .pin-clear { border: 0; border-radius: 18px; padding: 14px; font-family: inherit; font-weight: 600; cursor: pointer; transition: 0.22s ease; }
+    .pin-btn, .pin-clear { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.12); }
+    .pin-enter { grid-column: span 2; background: linear-gradient(135deg, #f2a0b9, #ffd7a8); color: #5d1028; box-shadow: 0 10px 24px rgba(255,215,168,0.16); }
+    .pin-btn:hover, .pin-enter:hover, .pin-clear:hover { transform: translateY(-2px) scale(1.02); }
+    .pin-hint { margin-top: 12px; font-size: 0.88rem; color: rgba(255,246,248,0.68); }
+    .pin-error { min-height: 22px; margin-top: 10px; color: #ffb3c8; font-size: 0.9rem; }
+
+    .hero { min-height: 100vh; display: grid; place-items: center; padding: 28px 18px 50px; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(255,122,166,0.18), transparent 70%); top: -250px; right: -180px; filter: blur(8px); }
+    .hero-card {
+      position: relative; width: min(980px, 100%); background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.16); backdrop-filter: blur(15px); border-radius: 34px; padding: 34px 22px 28px; box-shadow: var(--shadow); text-align: center; overflow: hidden;
+    }
+    .ticket-tag {
+      display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(255,179,200,0.14); color: var(--rose-soft); border: 1px solid rgba(255,179,200,0.28); letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.74rem; margin-bottom: 16px;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5.6rem); line-height: 0.95; margin-bottom: 16px; text-shadow: 0 8px 28px rgba(0,0,0,0.3); }
+    .gold { color: var(--rose); }
+    .hero p, .section-title p, .video-text p, .final-card p { color: rgba(255,246,248,0.84); line-height: 1.8; }
+    .hero p { max-width: 720px; margin: 0 auto; font-size: 1rem; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+    .btn { border: 0; border-radius: 999px; padding: 14px 22px; font-family: inherit; font-weight: 600; font-size: 0.98rem; cursor: pointer; transition: 0.25s ease; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-primary { background: linear-gradient(135deg, #f2a0b9, #ffd7a8); color: #5d1028; box-shadow: 0 10px 28px rgba(255,158,195,0.22); }
+    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--cream); border: 1px solid rgba(255,255,255,0.16); }
+    .btn:hover { transform: translateY(-3px) scale(1.02); }
+    .mini-train { margin-top: 30px; display: flex; align-items: end; justify-content: center; gap: 10px; animation: ride 9s ease-in-out infinite; opacity: 0.95; flex-wrap: wrap; }
+    @keyframes ride { 0%,100% { transform: translateX(0); } 50% { transform: translateX(12px); } }
+    .engine { width: 104px; height: 72px; border-radius: 20px 24px 16px 16px; }
+    .coach { width: 88px; height: 58px; border-radius: 18px; }
+
+    section { width: min(1120px, calc(100% - 24px)); margin: 0 auto 28px; }
+    .section-title { text-align: center; margin-bottom: 26px; padding-top: 8px; }
+    .section-title span { display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(255,179,200,0.13); color: var(--rose-soft); font-size: 0.78rem; letter-spacing: 1.3px; text-transform: uppercase; border: 1px solid rgba(255,179,200,0.22); margin-bottom: 12px; }
+    .section-title h2, .final-card h2, .letter h3, .flower-pocket-card h3 { font-family: 'Playfair Display', serif; }
+    .section-title h2 { font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 10px; }
+
+    .ticket { background: linear-gradient(135deg, rgba(255,246,248,0.98), rgba(255,231,237,0.96)); color: var(--ink); border-radius: 28px; box-shadow: var(--shadow); display: grid; grid-template-columns: 1.2fr 0.8fr; overflow: hidden; position: relative; }
+    .ticket::before, .ticket::after { content: ""; position: absolute; top: 50%; width: 34px; height: 34px; border-radius: 50%; background: #190307; transform: translateY(-50%); z-index: 2; }
+    .ticket::before { left: -17px; } .ticket::after { right: -17px; }
+    .ticket-main, .ticket-side { padding: 26px 22px; }
+    .ticket-main { border-right: 2px dashed rgba(79,33,56,0.18); }
+    .ticket-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 20px; }
+    .ticket-box { background: rgba(0,0,0,0.04); padding: 14px; border-radius: 16px; }
+    .ticket-box small { display: block; opacity: 0.7; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.7rem; }
+    .ticket-side { display: grid; place-items: center; text-align: center; background: linear-gradient(180deg, rgba(255,179,200,0.22), rgba(255,215,168,0.12)); }
+    .qr { width: 130px; aspect-ratio: 1; border-radius: 18px; background: linear-gradient(90deg, #000 10px, transparent 10px), linear-gradient(#000 10px, transparent 10px), repeating-linear-gradient(90deg, #000 0 8px, #fff 8px 16px), repeating-linear-gradient(#000 0 8px, #fff 8px 16px); background-size: 24px 24px, 24px 24px, 16px 16px, 16px 16px; background-color: white; border: 8px solid white; box-shadow: 0 8px 20px rgba(0,0,0,0.12); margin-bottom: 14px; }
+
+    .journey-grid { display: grid; grid-template-columns: 1fr; gap: 14px; position: relative; }
+    .journey-grid::before { content: ""; position: absolute; left: 22px; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #f2a0b9, rgba(255,255,255,0.14)); border-radius: 999px; }
+    .step-card { display: grid; grid-template-columns: 58px 96px 1fr; gap: 12px; align-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.13); border-radius: 22px; padding: 12px; box-shadow: var(--shadow); backdrop-filter: blur(10px); position: relative; margin-left: 10px; }
+    .step-number { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #f2a0b9, #ffd7a8); color: #5d1028; display: flex; align-items: center; justify-content: center; font-weight: 700; position: relative; z-index: 1; margin-left: -6px; box-shadow: 0 8px 18px rgba(255,159,198,0.2); }
+    .step-photo { width: 96px; height: 96px; border-radius: 18px; overflow: hidden; background: rgba(255,255,255,0.08); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.12); flex-shrink: 0; }
+    .step-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .step-text h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .step-text p { font-size: 0.92rem; margin-bottom: 8px; color: rgba(255,246,248,0.84); }
+    .memory-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .memory-tags span { display: inline-flex; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); font-size: 0.78rem; color: rgba(255,246,248,0.9); }
+
+    .booth-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; align-items: start; }
+    .booth-strip { background: #fff7fb; padding: 14px; border-radius: 28px; box-shadow: var(--shadow); max-width: 320px; margin: 0 auto; transform: rotate(-3deg); }
+    .booth-inner { background: #220914; border-radius: 22px; padding: 12px; display: grid; gap: 10px; }
+    .booth-shot { width: 100%; aspect-ratio: 3/4; border-radius: 16px; overflow: hidden; background: #2d1128; }
+    .booth-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .booth-caption { text-align: center; color: #7a2d58; font-weight: 600; margin-top: 10px; font-size: 0.95rem; }
+    .booth-notes { display: grid; gap: 14px; }
+    .note-card, .scrapbook-card, .video-card, .stat, .final-card, .flower-pocket-card { background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.13); border-radius: 24px; box-shadow: var(--shadow); backdrop-filter: blur(10px); }
+    .note-card, .scrapbook-card, .flower-pocket-card { padding: 18px; }
+    .note-card h3, .scrapbook-card h3, .video-text h3 { margin-bottom: 10px; font-size: 1.35rem; }
+    .scrapbook-mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+    .scrap { background: var(--paper); padding: 8px; border-radius: 16px; color: var(--ink); transform: rotate(var(--tilt)); }
+    .scrap img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; display: block; margin-bottom: 8px; }
+    .scrap small { display: block; font-size: 0.8rem; }
+
+    .gallery-wrap { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .polaroid { background: var(--paper); color: var(--ink); border-radius: 20px; padding: 10px 10px 14px; box-shadow: var(--shadow); transform: rotate(var(--rotate)); transition: 0.3s ease; cursor: pointer; }
+    .polaroid:hover { transform: rotate(0deg) translateY(-6px) scale(1.02); }
+    .polaroid img { width: 100%; aspect-ratio: 1 / 1.08; object-fit: cover; border-radius: 14px; display: block; margin-bottom: 10px; }
+    .polaroid h4 { font-size: 0.96rem; margin-bottom: 4px; }
+    .polaroid p { font-size: 0.82rem; opacity: 0.75; line-height: 1.55; }
+
+    .letter { background: linear-gradient(135deg, rgba(255,246,248,0.97), rgba(255,231,237,0.95)); color: var(--ink); border-radius: 32px; padding: 30px 22px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .letter::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(180deg, transparent 0 30px, rgba(79,33,56,0.05) 30px 31px); opacity: 0.7; pointer-events: none; }
+    .letter-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+    .letter h3 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; text-align: center; }
+    .letter p { font-size: 1.05rem; line-height: 2; margin-bottom: 14px; }
+    .signature { margin-top: 20px; font-family: 'Playfair Display', serif; font-size: 1.8rem; text-align: right; color: var(--berry); }
+
+    .video-card { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; align-items: center; padding: 18px; }
+    .video-box { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); background: #000; }
+    .video-box iframe { width: 100%; height: 100%; border: 0; }
+
+    .flower-pocket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+    .flower-pocket-visual { min-height: 460px; position: relative; display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, rgba(255,179,200,0.12), transparent 42%); }
+    .pocket-wrap { position: relative; width: 360px; height: 410px; }
+    .pocket { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 300px; height: 220px; background: linear-gradient(135deg, #ffd6e2, #ffb7cb); border-radius: 30px 30px 36px 36px; box-shadow: 0 24px 40px rgba(0,0,0,0.24); overflow: hidden; border: 1px solid rgba(255,255,255,0.52); }
+    .pocket::before { content: ""; position: absolute; left: 0; right: 0; top: -10px; margin: auto; width: 0; height: 0; border-left: 150px solid transparent; border-right: 150px solid transparent; border-top: 108px solid rgba(255,240,245,0.92); }
+    .pocket::after { content: "♥"; position: absolute; left: 50%; top: 102px; transform: translateX(-50%); color: rgba(193,43,84,0.46); font-size: 32px; }
+    .bouquet { position: absolute; left: 50%; bottom: 128px; transform: translateX(-50%); width: 300px; height: 240px; pointer-events: none; }
+    .stem { position: absolute; bottom: 0; width: 6px; height: 120px; background: linear-gradient(180deg, #92b67e, #5b7f53); border-radius: 999px; transform-origin: bottom center; }
+    .stem1 { left: 48px; transform: rotate(-22deg); } .stem2 { left: 94px; transform: rotate(-10deg); } .stem3 { left: 142px; transform: rotate(0deg); } .stem4 { left: 190px; transform: rotate(10deg); } .stem5 { left: 236px; transform: rotate(22deg); }
+    .leaf { position: absolute; width: 28px; height: 16px; background: linear-gradient(135deg, #90ba78, #5e8855); border-radius: 100% 0 100% 0; opacity: 0.95; }
+    .leaf1 { left: 36px; bottom: 70px; transform: rotate(-30deg); } .leaf2 { left: 82px; bottom: 92px; transform: rotate(28deg); } .leaf3 { left: 132px; bottom: 68px; transform: rotate(-24deg); } .leaf4 { left: 178px; bottom: 96px; transform: rotate(25deg); } .leaf5 { left: 228px; bottom: 74px; transform: rotate(-18deg); }
+    .big-flower { position: absolute; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; animation: bloomFloat 4.4s ease-in-out infinite; filter: drop-shadow(0 12px 18px rgba(0,0,0,0.16)); }
+    .big-flower span { position: absolute; width: 26px; height: 48px; border-radius: 999px; transform-origin: center 85%; }
+    .big-flower .center { width: 26px; height: 26px; border-radius: 50%; background: radial-gradient(circle, #fff6d2 0%, #ffd77d 65%, #f0b94d 100%); z-index: 2; box-shadow: 0 0 0 8px rgba(255,245,211,0.14); }
+    .f1 { left: 10px; top: 78px; } .f2 { left: 60px; top: 36px; } .f3 { left: 112px; top: 0; } .f4 { left: 166px; top: 36px; } .f5 { left: 214px; top: 78px; }
+    .flower-red span { background: linear-gradient(180deg, #ff9fba, #d12b5a); }
+    .flower-pink span { background: linear-gradient(180deg, #ffd1df, #ff7aa6); }
+    .flower-rose span { background: linear-gradient(180deg, #ffc0d3, #c12b54); }
+    .big-flower span:nth-child(1) { transform: rotate(0deg) translateY(-20px); }
+    .big-flower span:nth-child(2) { transform: rotate(45deg) translateY(-20px); }
+    .big-flower span:nth-child(3) { transform: rotate(90deg) translateY(-20px); }
+    .big-flower span:nth-child(4) { transform: rotate(135deg) translateY(-20px); }
+    .big-flower span:nth-child(5) { transform: rotate(180deg) translateY(-20px); }
+    .big-flower span:nth-child(6) { transform: rotate(225deg) translateY(-20px); }
+    .big-flower span:nth-child(7) { transform: rotate(270deg) translateY(-20px); }
+    .big-flower span:nth-child(8) { transform: rotate(315deg) translateY(-20px); }
+    @keyframes bloomFloat { 0%,100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-10px) scale(1.04); } }
+    .flower-pocket-card h3 { font-size: 2.2rem; margin-bottom: 10px; }
+    .flower-pocket-card p { color: rgba(255,246,248,0.86); line-height: 1.9; margin-bottom: 12px; }
+    .flower-messages { display: grid; gap: 10px; margin-top: 16px; }
+    .flower-note { padding: 12px 14px; border-radius: 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,246,248,0.9); }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .stat { padding: 20px 16px; text-align: center; }
+    .stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: #ffd0dd; margin-bottom: 6px; }
+    .stat span { color: rgba(255,246,248,0.82); font-size: 0.92rem; }
+    .love-counter-grid .stat { min-height: 132px; display: flex; flex-direction: column; justify-content: center; }
+    .interactive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .interactive-pop { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .interactive-pop:hover, .interactive-pop:active { transform: translateY(-4px) scale(1.02); }
+
+    .flip-card { perspective: 1000px; min-height: 220px; }
+    .flip-card-inner { position: relative; width: 100%; height: 100%; min-height: 220px; transition: transform 0.7s; transform-style: preserve-3d; }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.13); box-shadow: var(--shadow); backdrop-filter: blur(10px); }
+    .flip-back { transform: rotateY(180deg); }
+    .wish-card { border-radius: 24px; padding: 22px; display: flex; flex-direction: column; justify-content: center; gap: 12px; min-height: 220px; background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.13); box-shadow: var(--shadow); backdrop-filter: blur(10px); }
+    .small-btn { padding: 11px 16px; width: 100%; }
+
+    .memory-envelope { position: relative; min-height: 220px; border-radius: 24px; background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.13); box-shadow: var(--shadow); backdrop-filter: blur(10px); overflow: hidden; cursor: pointer; }
+    .envelope-top { position: absolute; left: 0; right: 0; top: 0; height: 50%; background: linear-gradient(135deg, #f2a0b9, #ffd7a8); clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top; transition: transform 0.6s ease; z-index: 2; }
+    .envelope-body { position: absolute; inset: 0; display: flex; align-items: end; justify-content: center; padding: 18px; }
+    .letter-paper { width: 90%; background: rgba(255,246,248,0.97); color: var(--ink); border-radius: 18px; padding: 18px; transform: translateY(45px); transition: transform 0.6s ease; box-shadow: 0 12px 28px rgba(0,0,0,0.16); text-align: center; }
+    .memory-envelope.open .envelope-top { transform: rotateX(180deg); }
+    .memory-envelope.open .letter-paper { transform: translateY(-4px); }
+
+    .final-section { padding-bottom: 60px; }
+    .final-card { padding: 32px 22px; text-align: center; position: relative; overflow: hidden; }
+    .final-card h2 { font-size: clamp(2.3rem, 6vw, 4rem); margin-bottom: 12px; }
+    .floating-hearts { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 999; }
+    .heart { position: absolute; bottom: -40px; color: rgba(255,179,200,0.95); font-size: 18px; animation: floatHeart linear forwards; text-shadow: 0 0 16px rgba(255,179,200,0.26); }
+    @keyframes floatHeart { from { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; } 12% { opacity: 1; } to { transform: translateY(-110vh) translateX(var(--x-shift)) scale(1.4) rotate(18deg); opacity: 0; } }
+    .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    .lightbox { position: fixed; inset: 0; background: rgba(20,8,23,0.82); display: flex; align-items: center; justify-content: center; padding: 18px; z-index: 1200; opacity: 0; pointer-events: none; transition: 0.3s ease; }
+    .lightbox.show { opacity: 1; pointer-events: auto; }
+    .lightbox-content { width: min(940px, 100%); background: linear-gradient(135deg, rgba(255,246,248,0.99), rgba(255,231,237,0.97)); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); color: var(--ink); position: relative; }
+    .lightbox-close { position: absolute; top: 12px; right: 12px; width: 42px; height: 42px; border: 0; border-radius: 50%; cursor: pointer; background: rgba(0,0,0,0.08); font-size: 1.2rem; }
+    .lightbox img { width: 100%; max-height: 70vh; object-fit: cover; display: block; }
+    .lightbox-text { padding: 18px; }
+    .lightbox-text h3 { margin-bottom: 8px; font-size: 1.3rem; }
+    .lightbox-text p { line-height: 1.8; opacity: 0.8; }
+    footer { text-align: center; padding: 0 18px 34px; color: rgba(255,246,248,0.58); font-size: 0.9rem; }
+
+    @media (max-width: 980px) {
+      .booth-wrap, .video-card, .ticket, .flower-pocket-grid { grid-template-columns: 1fr; }
+      .ticket-main { border-right: 0; border-bottom: 2px dashed rgba(79,33,56,0.18); }
+      .gallery-wrap { grid-template-columns: repeat(5, 1fr); }
+      .stats { grid-template-columns: repeat(4, 1fr); }
+      .interactive-grid { grid-template-columns: repeat(3, 1fr); }
+      .scrapbook-mini { grid-template-columns: repeat(3, 1fr); }
+      .pocket-wrap { margin: 0 auto; }
+    }
+    @media (max-width: 760px) {
+      .hero-card { padding: 26px 16px 20px; border-radius: 26px; }
+      .ticket-main, .ticket-side, .letter, .final-card, .flower-pocket-card { padding-left: 16px; padding-right: 16px; }
+      .ticket-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats { grid-template-columns: repeat(4, 1fr); }
+      .gallery-wrap { grid-template-columns: repeat(3, 1fr); }
+      .scrapbook-mini { grid-template-columns: repeat(3, 1fr); }
+      .interactive-grid { grid-template-columns: repeat(3, 1fr); }
+      .step-card { grid-template-columns: 42px 74px 1fr; gap: 10px; padding: 10px; }
+      .step-photo { width: 74px; height: 74px; border-radius: 14px; }
+      .step-text h3 { font-size: 0.96rem; }
+      .step-text p { font-size: 0.84rem; }
+      .journey-grid::before { left: 18px; }
+      .section-title p, .hero p, .video-text p, .final-card p { font-size: 0.94rem; }
+      .scroll-train { transform-origin: left bottom; bottom: 50px; }
+      .booth-strip { max-width: 260px; }
+      .stat { padding: 16px 10px; }
+      .stat strong { font-size: 1.45rem; }
+      .stat span { font-size: 0.78rem; }
+      .flip-face, .wish-card { padding: 14px; min-height: 190px; }
+      .flip-face h3, .wish-card h3, .letter-paper h3, .flower-pocket-card h3 { font-size: 1rem; }
+      .flip-face p, .wish-card p, .letter-paper p, .flower-pocket-card p { font-size: 0.82rem; }
+      .memory-envelope { min-height: 190px; }
+      .pocket-wrap { width: 280px; height: 340px; }
+      .pocket { width: 240px; height: 190px; }
+      .pocket::before { border-left-width: 120px; border-right-width: 120px; border-top-width: 90px; }
+      .bouquet { width: 240px; height: 200px; bottom: 116px; }
+      .big-flower { width: 72px; height: 72px; }
+      .big-flower span { width: 22px; height: 40px; }
+      .f1 { left: 8px; top: 78px; } .f2 { left: 46px; top: 34px; } .f3 { left: 86px; top: 4px; } .f4 { left: 126px; top: 34px; } .f5 { left: 166px; top: 78px; }
+      .gate-inner { padding-top: 52px; padding-bottom: 50px; }
+    }
+    @media (max-width: 520px) {
+      section { width: min(100% - 14px, 1120px); }
+      .hero { padding: 18px 10px 38px; }
+      .hero h1 { font-size: clamp(2.2rem, 12vw, 3.3rem); }
+      .hero-actions { gap: 10px; }
+      .btn { width: 100%; padding: 13px 16px; }
+      .step-card { grid-template-columns: 34px 62px 1fr; border-radius: 18px; }
+      .step-number { width: 30px; height: 30px; font-size: 0.85rem; }
+      .step-photo { width: 62px; height: 62px; }
+      .memory-tags span { font-size: 0.72rem; padding: 5px 8px; }
+      .booth-strip { max-width: 220px; padding: 10px; }
+      .booth-inner { padding: 8px; gap: 8px; }
+      .note-card, .scrapbook-card, .video-card, .stat, .final-card, .letter, .flip-face, .wish-card, .memory-envelope, .flower-pocket-card { border-radius: 20px; }
+      .ticket-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .gallery-wrap { grid-template-columns: repeat(2, 1fr); }
+      .scrapbook-mini { grid-template-columns: repeat(2, 1fr); }
+      .stats { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+      .interactive-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .flip-card { min-height: 170px; }
+      .flip-card-inner { min-height: 170px; }
+      .flip-face, .wish-card { min-height: 170px; }
+      .memory-envelope { min-height: 170px; }
+      .letter-paper { padding: 12px; }
+      .mini-flowers .flower { font-size: 15px; opacity: 0.34; }
+      .flower-pocket-grid { gap: 12px; }
+      .pocket-wrap { width: 230px; height: 290px; }
+      .pocket { width: 210px; height: 165px; }
+      .pocket::before { border-left-width: 105px; border-right-width: 105px; border-top-width: 78px; }
+      .bouquet { width: 210px; height: 170px; bottom: 100px; }
+      .big-flower { width: 62px; height: 62px; }
+      .big-flower span { width: 18px; height: 34px; }
+      .f1 { left: 2px; top: 70px; } .f2 { left: 34px; top: 32px; } .f3 { left: 72px; top: 4px; } .f4 { left: 110px; top: 32px; } .f5 { left: 146px; top: 70px; }
+      .gate-poster { border-radius: 28px; padding-left: 14px; padding-right: 14px; }
+      .bow { width: 82px; height: 56px; }
+      .bow::before, .bow::after { width: 40px; height: 32px; }
+      .pin-display { letter-spacing: 8px; font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="gate-screen" id="gateScreen">
+    <div class="gate-poster">
+      <div class="ribbon-top">
+        <div class="ribbon-strip"></div>
+        <div class="bow left"><div class="bow-center"></div></div>
+        <div class="bow right"><div class="bow-center"></div></div>
+      </div>
+      <div class="ribbon-bottom">
+        <div class="ribbon-strip"></div>
+        <div class="bow left"><div class="bow-center"></div></div>
+        <div class="bow right"><div class="bow-center"></div></div>
+      </div>
+      <div class="gate-inner">
+        <div class="gate-tag">Private Memory Entrance</div>
+        <h1>Are you ready to enter our life memories?</h1>
+        <p>A wrapped little world of love, moments, music, and the sweetest memories is waiting behind this code.</p>
+        <div class="pin-wrap">
+          <input class="pin-display" id="pinDisplay" type="password" inputmode="numeric" maxlength="3" placeholder="•••" readonly>
+          <div class="pin-pad">
+            <button class="pin-btn" data-pin="1">1</button>
+            <button class="pin-btn" data-pin="2">2</button>
+            <button class="pin-btn" data-pin="3">3</button>
+            <button class="pin-btn" data-pin="4">4</button>
+            <button class="pin-btn" data-pin="5">5</button>
+            <button class="pin-btn" data-pin="6">6</button>
+            <button class="pin-btn" data-pin="7">7</button>
+            <button class="pin-btn" data-pin="8">8</button>
+            <button class="pin-btn" data-pin="9">9</button>
+            <button class="pin-clear" id="pinClear">Clear</button>
+            <button class="pin-btn" data-pin="0">0</button>
+            <button class="pin-enter" id="pinEnter">Enter</button>
+          </div>
+          <div class="pin-error" id="pinError"></div>
+          <div class="pin-hint">Enter the secret pin to unwrap the memory poster.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="smoke">
+    <div class="puff"></div>
+    <div class="puff"></div>
+    <div class="puff"></div>
+    <div class="puff"></div>
+    <div class="puff"></div>
+  </div>
+  <div class="rail-line"></div>
+  <div class="scroll-train" id="scrollTrain" aria-hidden="true">
+    <div class="scroll-engine"><div class="scroll-wheel"></div></div>
+    <div class="scroll-coach"><div class="scroll-coach-wheel"></div></div>
+    <div class="scroll-coach"><div class="scroll-coach-wheel"></div></div>
+    <div class="scroll-coach"><div class="scroll-coach-wheel"></div></div>
+  </div>
+  <div class="floating-hearts" id="floatingHearts"></div>
+  <div class="mini-flowers" aria-hidden="true">
+    <div class="flower">🌸</div>
+    <div class="flower">🌷</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🌸</div>
+    <div class="flower">🌷</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🌸</div>
+    <div class="flower">🌷</div>
+    <div class="flower">🌼</div>
+  </div>
+
+  
+
+  <header class="hero">
+    <div class="hero-card reveal show">
+      <div class="ticket-tag">A one-way ticket through our favorite memories</div>
+      <h1><span class="gold">Layla</span> &amp; <span class="gold">Ahmed</span></h1>
+      <p>
+        Every stop tells a story, every carriage holds a memory, and every moment feels like a beautiful part of Layla and Ahmed's journey together.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#ticket" class="btn btn-primary">Open the ticket</a>
+        <a href="#journey" class="btn btn-secondary">Start the journey</a>
+      </div>
+
+      <div class="mini-train" aria-hidden="true">
+        <div class="engine"><div class="wheel"></div></div>
+        <div class="coach"><div class="coach-wheel"></div></div>
+        <div class="coach"><div class="coach-wheel"></div></div>
+        <div class="coach"><div class="coach-wheel"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="ticket" class="reveal">
+    <div class="section-title">
+      <span>Golden Ticket</span>
+      <h2>Your Boarding Pass</h2>
+      <p>
+        A romantic keepsake styled like an old luxury train ticket, created as a beautiful memory piece for Layla and Ahmed.
+      </p>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-main">
+        <h3 style="font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:10px;">Memory Express</h3>
+        <p style="line-height:1.8;opacity:0.8;">Issued for two hearts traveling together through unforgettable moments, inside jokes, and little details that deserve to stay forever.</p>
+
+        <div class="ticket-grid">
+          <div class="ticket-box">
+            <small>Passenger One</small>
+            <strong>Layla</strong>
+          </div>
+          <div class="ticket-box">
+            <small>Passenger Two</small>
+            <strong>Ahmed</strong>
+          </div>
+          <div class="ticket-box">
+            <small>Departure</small>
+            <strong>The day we met</strong>
+          </div>
+          <div class="ticket-box">
+            <small>Destination</small>
+            <strong>Forever, hopefully</strong>
+          </div>
+          <div class="ticket-box">
+            <small>Seat</small>
+            <strong>Window side, together</strong>
+          </div>
+          <div class="ticket-box">
+            <small>Train No.</small>
+            <strong>LOVE-021</strong>
+          </div>
+        </div>
+      </div>
+      <div class="ticket-side">
+        <div>
+          <div class="qr"></div>
+          <strong style="display:block;font-size:1.1rem;margin-bottom:6px;">Scan for memories</strong>
+          <p style="opacity:0.8;line-height:1.7;max-width:240px;">A special little detail that turns this memory page into something even sweeter to keep, save, and share.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="reveal">
+    <div class="section-title">
+      <span>Main Story</span>
+      <h2>Our Journey Steps</h2>
+      <p>
+        A beautiful timeline of moments, memories, and little chapters that tell their story in the sweetest way.
+      </p>
+    </div>
+
+    <div class="journey-grid">
+      <article class="step-card reveal">
+        <div class="step-number">1</div>
+        <div class="step-photo"><img src="image1.jpg" alt="image1"></div>
+        <div class="step-text">
+          <h3>The first little spark</h3>
+          <p>This was the beginning of something beautiful, the first chapter of a story filled with soft moments and warm feelings.</p>
+          <div class="memory-tags"><span>First look</span><span>Sweet start</span><span>Butterflies</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">2</div>
+        <div class="step-photo"><img src="image2.jpg" alt="image2"></div>
+        <div class="step-text">
+          <h3>The day I knew</h3>
+          <p>A moment that stayed in the heart, soft and unforgettable, like the start of something truly special.</p>
+          <div class="memory-tags"><span>Core memory</span><span>Best mood</span><span>Golden day</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">3</div>
+        <div class="step-photo"><img src="image3.jpg" alt="image3"></div>
+        <div class="step-text">
+          <h3>Small things, big meaning</h3>
+          <p>The little details, the shared smiles, and the tiny moments that slowly became some of the most meaningful memories.</p>
+          <div class="memory-tags"><span>Texts</span><span>Laughs</span><span>Little things</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">4</div>
+        <div class="step-photo"><img src="image4.jpg" alt="image4"></div>
+        <div class="step-text">
+          <h3>One unforgettable date</h3>
+          <p>A beautiful memory, simple and full of warmth, yet impossible to forget.</p>
+          <div class="memory-tags"><span>Favorite date</span><span>Happy heart</span><span>Soft light</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">5</div>
+        <div class="step-photo"><img src="image5.jpg" alt="image5"></div>
+        <div class="step-text">
+          <h3>The comfort chapter</h3>
+          <p>The kind of moment that feels safe, calm, and exactly like where the heart belongs.</p>
+          <div class="memory-tags"><span>Comfort</span><span>Peace</span><span>Together</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">6</div>
+        <div class="step-photo"><img src="image6.jpg" alt="image6"></div>
+        <div class="step-text">
+          <h3>The funniest memory</h3>
+          <p>A memory full of laughter, joy, and the kind of happiness that deserves to be relived again and again.</p>
+          <div class="memory-tags"><span>Inside jokes</span><span>Funniest day</span><span>Smile</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">7</div>
+        <div class="step-photo"><img src="image7.jpg" alt="image7"></div>
+        <div class="step-text">
+          <h3>The softest photo</h3>
+          <p>Some photos carry the whole feeling inside them and say everything without needing a single word.</p>
+          <div class="memory-tags"><span>Favorite photo</span><span>Gentle</span><span>Pretty moment</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">8</div>
+        <div class="step-photo"><img src="image8.jpg" alt="image8"></div>
+        <div class="step-text">
+          <h3>Our dreamy stop</h3>
+          <p>A dreamy memory, soft and romantic, like a little scene from a beautiful story.</p>
+          <div class="memory-tags"><span>Dreamy</span><span>Romantic</span><span>Pretty view</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">9</div>
+        <div class="step-photo"><img src="image9.jpg" alt="image9"></div>
+        <div class="step-text">
+          <h3>Still falling more</h3>
+          <p>A chapter where the feelings grew deeper and the love became even more beautiful with time.</p>
+          <div class="memory-tags"><span>Closer</span><span>More love</span><span>Heart full</span></div>
+        </div>
+      </article>
+
+      <article class="step-card reveal">
+        <div class="step-number">10</div>
+        <div class="step-photo"><img src="image10.jpg" alt="image10"></div>
+        <div class="step-text">
+          <h3>The next chapter</h3>
+          <p>And this is only the beginning, with many more beautiful memories still waiting ahead.</p>
+          <div class="memory-tags"><span>Future us</span><span>Next stop</span><span>More memories</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-title">
+      <span>Photo Booth</span>
+      <h2>Our Cute Photo Booth</h2>
+      <p>
+        A sweet little photo booth section filled with soft moments, playful memories, and beautiful snapshots together.
+      </p>
+    </div>
+
+    <div class="booth-wrap">
+      <div class="booth-strip">
+        <div class="booth-inner">
+          <div class="booth-shot"><img src="image1.jpg" alt="booth 1"></div>
+          <div class="booth-shot"><img src="image2.jpg" alt="booth 2"></div>
+          <div class="booth-shot"><img src="image3.jpg" alt="booth 3"></div>
+        </div>
+        <div class="booth-caption">love booth memories ✿</div>
+      </div>
+
+      <div class="booth-notes">
+        <div class="note-card">
+          <h3>Photo booth note</h3>
+          <p>A little collection of sweet snapshots gathered like a soft memory strip full of love, laughter, and beautiful moments.</p>
+        </div>
+
+        <div class="scrapbook-card">
+          <h3>Mini scrapbook</h3>
+          <p>A mini scrapbook filled with tiny snapshots and soft captions, like a beautiful page from their story together.</p>
+          <div class="scrapbook-mini">
+            <div class="scrap" style="--tilt:-4deg"><img src="image4.jpg" alt="image4"><small>the sweetest smile</small></div>
+            <div class="scrap" style="--tilt:3deg"><img src="image5.jpg" alt="image5"><small>our softest memory</small></div>
+            <div class="scrap" style="--tilt:-2deg"><img src="image6.jpg" alt="image6"><small>a forever favorite</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-title">
+      <span>Polaroid Wall</span>
+      <h2>Ten Saved Moments</h2>
+      <p>
+        A wall of special moments, each one holding a memory, a feeling, and a beautiful piece of their story together.
+      </p>
+    </div>
+
+    <div class="gallery-wrap">
+      <div class="polaroid" style="--rotate:-4deg" data-title="Moment 1" data-text="A first favorite memory saved forever.">
+        <img src="image1.jpg" alt="image1">
+        <h4>Moment 1</h4>
+        <p>The beginning of everything sweet.</p>
+      </div>
+      <div class="polaroid" style="--rotate:3deg" data-title="Moment 2" data-text="A memory full of warmth and pretty details.">
+        <img src="image2.jpg" alt="image2">
+        <h4>Moment 2</h4>
+        <p>A soft little chapter.</p>
+      </div>
+      <div class="polaroid" style="--rotate:-2deg" data-title="Moment 3" data-text="One of those memories that instantly brings a smile.">
+        <img src="image3.jpg" alt="image3">
+        <h4>Moment 3</h4>
+        <p>A smile in photo form.</p>
+      </div>
+      <div class="polaroid" style="--rotate:4deg" data-title="Moment 4" data-text="A stop in the journey that still feels special.">
+        <img src="image4.jpg" alt="image4">
+        <h4>Moment 4</h4>
+        <p>A beautiful pause.</p>
+      </div>
+      <div class="polaroid" style="--rotate:-3deg" data-title="Moment 5" data-text="The comfort of being together in one frame.">
+        <img src="image5.jpg" alt="image5">
+        <h4>Moment 5</h4>
+        <p>Comfort and calm.</p>
+      </div>
+      <div class="polaroid" style="--rotate:2deg" data-title="Moment 6" data-text="A fun memory we never get tired of.">
+        <img src="image6.jpg" alt="image6">
+        <h4>Moment 6</h4>
+        <p>Pure happy energy.</p>
+      </div>
+      <div class="polaroid" style="--rotate:-5deg" data-title="Moment 7" data-text="One of the prettiest frames in the story.">
+        <img src="image7.jpg" alt="image7">
+        <h4>Moment 7</h4>
+        <p>The softest frame.</p>
+      </div>
+      <div class="polaroid" style="--rotate:4deg" data-title="Moment 8" data-text="Dreamy, romantic, and impossible to forget.">
+        <img src="image8.jpg" alt="image8">
+        <h4>Moment 8</h4>
+        <p>Dreamy and pink.</p>
+      </div>
+      <div class="polaroid" style="--rotate:-2deg" data-title="Moment 9" data-text="A memory that feels closer than words.">
+        <img src="image9.jpg" alt="image9">
+        <h4>Moment 9</h4>
+        <p>Closer than ever.</p>
+      </div>
+      <div class="polaroid" style="--rotate:3deg" data-title="Moment 10" data-text="A promise that there is still more to come.">
+        <img src="image10.jpg" alt="image10">
+        <h4>Moment 10</h4>
+        <p>The next favorite memory.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-title">
+      <span>Love Letter</span>
+      <h2>A Note Kept Between the Pages</h2>
+      <p>
+        A heartfelt note kept between the pages, filled with love, gratitude, and memories worth keeping forever.
+      </p>
+    </div>
+
+    <div class="letter">
+      <div class="letter-inner">
+        <h3>To the one who made the journey beautiful,</h3>
+        <p>
+          If I could keep one thing forever, I think it would be the feeling hidden inside our memories.
+          Not only the big moments, but the little ones too — the random laughs, the soft messages,
+          the comfort, the closeness, and the tiny details that made everything feel different.
+        </p>
+        <p>
+          This website is my way of saying that our story matters to me. Every stop, every picture, every moment here
+          is proof that what we shared was real, special, and worth holding onto.
+        </p>
+        <p>
+          And if life is really a long train ride, then I am grateful that somewhere along the way,
+          our paths ended up in the same carriage.
+        </p>
+        <div class="signature">— Yours always</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-title">
+      <span>Song + Video</span>
+      <h2>The Soundtrack of the Journey</h2>
+      <p>
+        A special soundtrack and video section that brings the whole journey to life with even more feeling and warmth.
+      </p>
+    </div>
+
+    <div class="video-card">
+      <div class="video-box">
+        <iframe src="Mitski - My Love Mine All Mine.mp4" title="Memory video" allowfullscreen></iframe>
+      </div>
+      <div class="video-text">
+        <h3>One song can bring back everything</h3>
+        <p>
+          Add the song that feels like your story. It could be the one you both love, the one that reminds you of a specific memory, or a soft background track that makes the whole page feel even more emotional.
+        </p>
+        <a href="#final" class="btn btn-primary">Go to the final station</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-title">
+      <span>Flower Pocket</span>
+      <h2>A Pocket Full of Flowers</h2>
+      <p>
+        A soft little pocket filled with flowers, sweet words, and beautiful feelings gathered for Layla and Ahmed.
+      </p>
+    </div>
+
+    <div class="flower-pocket-grid">
+      <div class="flower-pocket-visual">
+        <div class="pocket-wrap">
+          <div class="bouquet" aria-hidden="true">
+            <div class="stem stem1"></div>
+            <div class="stem stem2"></div>
+            <div class="stem stem3"></div>
+            <div class="stem stem4"></div>
+            <div class="stem stem5"></div>
+            <div class="leaf leaf1"></div>
+            <div class="leaf leaf2"></div>
+            <div class="leaf leaf3"></div>
+            <div class="leaf leaf4"></div>
+            <div class="leaf leaf5"></div>
+            <div class="big-flower flower-red f1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><div class="center"></div></div>
+            <div class="big-flower flower-pink f2"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><div class="center"></div></div>
+            <div class="big-flower flower-rose f3"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><div class="center"></div></div>
+            <div class="big-flower flower-pink f4"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><div class="center"></div></div>
+            <div class="big-flower flower-red f5"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><div class="center"></div></div>
+          </div>
+          <div class="pocket"></div>
+        </div>
+      </div>
+      <div class="flower-pocket-card interactive-pop">
+        <h3>Flowers to Keep Forever</h3>
+        <p>
+          Some feelings are too soft for ordinary words, so they become flowers, memories, and little details kept safely in one beautiful place.
+        </p>
+        <p>
+          Just like every stop in this story, each flower carries a little piece of love, warmth, and the sweetest kind of memory.
+        </p>
+        <div class="flower-messages">
+          <div class="flower-note">🌸 Soft moments that stayed in the heart.</div>
+          <div class="flower-note">🌷 Beautiful memories gathered with love.</div>
+          <div class="flower-note">🌼 A story that keeps blooming more each day.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-title">
+      <span>Love Counter</span>
+      <h2>Counting Since 5 / 11 / 2024</h2>
+      <p>
+        A live love counter that marks every beautiful day, hour, minute, and second since the beginning.
+      </p>
+    </div>
+
+    <div class="stats love-counter-grid">
+      <div class="stat interactive-pop"><strong id="loveDays">0</strong><span>days together</span></div>
+      <div class="stat interactive-pop"><strong id="loveHours">00</strong><span>hours</span></div>
+      <div class="stat interactive-pop"><strong id="loveMinutes">00</strong><span>minutes</span></div>
+      <div class="stat interactive-pop"><strong id="loveSeconds">00</strong><span>seconds</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-title">
+      <span>Interactive Moments</span>
+      <h2>Tap, Flip, and Open More</h2>
+      <p>
+        A few sweet interactive touches that make the whole memory page feel even more special and alive.
+      </p>
+    </div>
+
+    <div class="interactive-grid">
+      <div class="flip-card interactive-pop">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <h3>Tap to flip</h3>
+            <p>Open a sweet hidden message.</p>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Hidden note</h3>
+            <p>You are my favorite stop in every chapter of this journey.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wish-card interactive-pop" id="wishCard">
+        <h3>Open a love wish</h3>
+        <p id="wishText">Tap the button to reveal a random cute line.</p>
+        <button class="btn btn-primary small-btn" id="wishBtn">Reveal</button>
+      </div>
+
+      <div class="memory-envelope interactive-pop" id="memoryEnvelope">
+        <div class="envelope-top"></div>
+        <div class="envelope-body">
+          <div class="letter-paper">
+            <h3>A tiny letter</h3>
+            <p>Even after all this time, I would still choose you again and again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="final" class="final-section reveal">
+    <div class="final-card">
+      <div class="ticket-tag">Final Station</div>
+      <h2>This train never really ends.</h2>
+      <p>
+        Some journeys are too beautiful to leave behind, and this one is filled with memories worth keeping forever. For Layla and Ahmed, every stop becomes a little piece of a story that only grows more beautiful with time.
+      </p>
+      <button class="btn btn-primary" id="celebrateBtn">Send hearts</button>
+    </div>
+  </section>
+
+  <footer>
+    Made with love, soft lights, and a thousand tiny memories for Layla and Ahmed.
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+      <img id="lightboxImage" src="" alt="Expanded memory">
+      <div class="lightbox-text">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const heartsContainer = document.getElementById('floatingHearts');
+    const stats = document.querySelectorAll('.stat strong[data-target]');
+    const polaroids = document.querySelectorAll('.polaroid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const scrollTrain = document.getElementById('scrollTrain');
+    const loveDays = document.getElementById('loveDays');
+    const loveHours = document.getElementById('loveHours');
+    const loveMinutes = document.getElementById('loveMinutes');
+    const loveSeconds = document.getElementById('loveSeconds');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          if (entry.target.querySelector('.stat')) animateStats();
+        }
+      });
+    }, { threshold: 0.16 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    function updateTrainPosition() {
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, window.scrollY / maxScroll);
+      const travelWidth = window.innerWidth + 320;
+      const x = -220 + progress * travelWidth;
+      const bounce = Math.sin(window.scrollY * 0.03) * 4;
+      scrollTrain.style.transform = `translate3d(${x}px, ${bounce}px, 0)`;
+    }
+
+    window.addEventListener('scroll', updateTrainPosition, { passive: true });
+    window.addEventListener('resize', updateTrainPosition);
+    updateTrainPosition();
+
+    function updateLoveCounter() {
+      const startDate = new Date(2024, 10, 5, 0, 0, 0);
+      const now = new Date();
+      const diff = now.getTime() - startDate.getTime();
+
+      if (diff < 0) {
+        if (loveDays) loveDays.textContent = '0';
+        if (loveHours) loveHours.textContent = '00';
+        if (loveMinutes) loveMinutes.textContent = '00';
+        if (loveSeconds) loveSeconds.textContent = '00';
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      if (loveDays) loveDays.textContent = String(days);
+      if (loveHours) loveHours.textContent = String(hours).padStart(2, '0');
+      if (loveMinutes) loveMinutes.textContent = String(minutes).padStart(2, '0');
+      if (loveSeconds) loveSeconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateLoveCounter();
+    window.setInterval(updateLoveCounter, 1000);
+
+    function createHeartBurst(count = 24) {
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = ['❤','♥','♡','💖','✨'][Math.floor(Math.random() * 5)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.setProperty('--x-shift', (Math.random() * 80 - 40) + 'px');
+        heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+        heart.style.fontSize = (16 + Math.random() * 18) + 'px';
+        heartsContainer.appendChild(heart);
+        setTimeout(() => heart.remove(), 8500);
+      }
+    }
+
+    const celebrateBtn = document.getElementById('celebrateBtn');
+    if (celebrateBtn) {
+      celebrateBtn.addEventListener('click', () => createHeartBurst(36));
+    }
+
+    let statsAnimated = false;
+    function animateStats() {
+      if (statsAnimated || !stats.length) return;
+      statsAnimated = true;
+      stats.forEach(stat => {
+        const target = Number(stat.dataset.target || '0');
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 45));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            stat.textContent = String(target);
+            clearInterval(timer);
+          } else {
+            stat.textContent = String(current);
+          }
+        }, 28);
+      });
+    }
+
+    polaroids.forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img').src;
+        lightboxImage.src = img;
+        lightboxTitle.textContent = card.dataset.title || 'Memory';
+        lightboxDesc.textContent = card.dataset.text || '';
+        lightbox.classList.add('show');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('show');
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    const flipCard = document.querySelector('.flip-card');
+    if (flipCard) {
+      flipCard.addEventListener('click', () => flipCard.classList.toggle('flipped'));
+    }
+
+    const envelope = document.getElementById('memoryEnvelope');
+    if (envelope) {
+      envelope.addEventListener('click', () => envelope.classList.toggle('open'));
+    }
+
+    const wishes = [
+      'You make ordinary days feel magical.',
+      'My favorite place is wherever you are.',
+      'Every memory with you feels softer and brighter.',
+      'You are the reason this whole journey feels beautiful.',
+      'Loving you feels like home.'
+    ];
+
+    const wishBtn = document.getElementById('wishBtn');
+    const wishText = document.getElementById('wishText');
+    if (wishBtn && wishText) {
+      wishBtn.addEventListener('click', () => {
+        const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+        wishText.textContent = randomWish;
+        createHeartBurst(12);
+      });
+    }
+
+    setTimeout(() => createHeartBurst(16), 1200);
+  const gateScreen = document.getElementById('gateScreen');
+    const pinDisplay = document.getElementById('pinDisplay');
+    const pinButtons = document.querySelectorAll('[data-pin]');
+    const pinClear = document.getElementById('pinClear');
+    const pinEnter = document.getElementById('pinEnter');
+    const pinError = document.getElementById('pinError');
+    let currentPin = '';
+    const secretPin = '511';
+
+    function updatePinDisplay() {
+      if (pinDisplay) pinDisplay.value = currentPin;
+    }
+
+    pinButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (currentPin.length < 3) {
+          currentPin += btn.dataset.pin;
+          updatePinDisplay();
+          if (pinError) pinError.textContent = '';
+        }
+      });
+    });
+
+    if (pinClear) {
+      pinClear.addEventListener('click', () => {
+        currentPin = '';
+        updatePinDisplay();
+        if (pinError) pinError.textContent = '';
+      });
+    }
+
+    function unlockGate() {
+      if (currentPin === secretPin) {
+        if (gateScreen) gateScreen.classList.add('hidden');
+        createBurst(26);
+        setTimeout(() => createBurst(18), 260);
+      } else {
+        if (pinError) pinError.textContent = 'That code is not right. Try again, love.';
+        currentPin = '';
+        updatePinDisplay();
+      }
+    }
+
+    if (pinEnter) {
+      pinEnter.addEventListener('click', unlockGate);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!gateScreen || gateScreen.classList.contains('hidden')) return;
+      if (/^[0-9]$/.test(e.key) && currentPin.length < 3) {
+        currentPin += e.key;
+        updatePinDisplay();
+        if (pinError) pinError.textContent = '';
+      } else if (e.key === 'Backspace') {
+        currentPin = currentPin.slice(0, -1);
+        updatePinDisplay();
+      } else if (e.key === 'Enter') {
+        unlockGate();
+      }
+    });
+</script>
+</body>
+</html>
